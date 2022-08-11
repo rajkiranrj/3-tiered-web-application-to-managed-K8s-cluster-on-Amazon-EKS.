@@ -10,7 +10,7 @@ spec:
   - name: simple-webapp-mysql
     image: kodekloud/simple-webapp-mysql
     ports:
-    - containerPort: 8080
+    - containerPort: 81
     volumeMounts:
     - name: app-secret-volumes
       mountPath: "/opt/app-secret-volumes"
@@ -18,7 +18,15 @@ spec:
     envFrom:
       - secretRef:
           name: app-secret
+    - name: config-volumes
+      mountPath: "/clo835/config/image_url"
+    envFrom:
+      - secretRef:
+          name: mysql-webapp-configmap  
   volumes:
     - name: app-secret-volumes
       secret:
         secretName: app-secret
+    - name: config-volumes
+      configMap:
+        name: mysql-webapp-configmap
