@@ -31,7 +31,7 @@ jobs:
       - name: Build, Test, Tag and push cats image to Amazon ECR
         env: 
           ECR_REGISTRY: ${{steps.login-ecr.outputs.registry}}
-          # ECR_REPOSITORY: rkrnarala_repo
+          ECR_REPOSITORY: rkrnarala_repo
           IMAGE_TAG: myimageV1.1
       # Runs a set of commands
         run: |
