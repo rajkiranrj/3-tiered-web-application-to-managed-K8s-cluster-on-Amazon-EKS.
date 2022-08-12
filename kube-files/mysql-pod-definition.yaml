@@ -12,5 +12,4 @@ spec:
     - containerPort: 3306
     env:
       - name: MYSQL_ROOT_PASSWORD
-        secret:
-         secret name: app-secret
+        value: paswrd
