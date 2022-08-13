@@ -1,7 +1,5 @@
 FROM python:alpine
 
-RUN pip install --upgrade pip
-
 ADD ./requirements.txt /opt/webapp-mysql/
 
 WORKDIR /opt/webapp-mysql
