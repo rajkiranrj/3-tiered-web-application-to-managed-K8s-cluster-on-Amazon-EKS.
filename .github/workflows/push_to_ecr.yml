@@ -35,7 +35,7 @@ jobs:
           IMAGE_TAG: myimageV1.6
       # Runs a set of commands
         run: |
-          cd webapp/
+          cd /
           ls -ltra
           # Build the docker image 
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
