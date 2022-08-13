@@ -32,7 +32,7 @@ jobs:
         env: 
           ECR_REGISTRY: ${{steps.login-ecr.outputs.registry}}
           ECR_REPOSITORY: rkrnarala_repo
-          IMAGE_TAG: myimageV1.1
+          IMAGE_TAG: myimageV1.6
       # Runs a set of commands
         run: |
           cd webapp/
@@ -41,7 +41,7 @@ jobs:
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           
           # Run the unit test
-          docker run -d -p 81:81 --name myimageV1.0 $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          docker run -d -p 81:81 --name webappt1 $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           # list all the containers
           docker ps
           echo " sleep 10 seconds for container to run"
