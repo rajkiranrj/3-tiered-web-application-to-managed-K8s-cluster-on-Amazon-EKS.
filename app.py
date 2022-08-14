@@ -15,6 +15,9 @@ name1 = os.environ.get('name1')
 S = os.environ.get('S') 
 F = os.environ.get('F') 
 
+print(" S3 Image-URL: ", S)
+print(" S3 Image-URL: ", F)
+
 @app.route("/")
 def main():
     db_connect_result = False
