@@ -11,8 +11,9 @@ DB_Database = os.environ.get('DB_Database') or "mysql"
 DB_User = os.environ.get('DB_User') or "root"
 DB_Password = os.environ.get('DB_Password') or "paswrd"
 
-images = os.environ.get('https://final-rkrnarala.s3.amazonaws.com/success.jpg')
-name = os.environ.get('Raj Kiran Reddy Narala')
+name1 = os.environ.get('name1')
+S = os.environ.get('S') 
+F = os.environ.get('F') 
 
 @app.route("/")
 def main():
@@ -26,7 +27,7 @@ def main():
         color = '#ff3f3f'
         err_message = str(e)
 
-    return render_template('hello.html', debug="Environment Variables: DB_Host=" + (os.environ.get('DB_Host') or "Not Set") + "; DB_Database=" + (os.environ.get('DB_Database')  or "Not Set") + "; DB_User=" + (os.environ.get('DB_User')  or "Not Set") + "; DB_Password=" + (os.environ.get('DB_Password')  or "Not Set") + "; " + err_message, db_connect_result=db_connect_result, name=socket.gethostname(), color=color)
+    return render_template('hello.html', debug="Environment Variables: DB_Host=" + (os.environ.get('DB_Host') or "Not Set") + "; DB_Database=" + (os.environ.get('DB_Database')  or "Not Set") + "; DB_User=" + (os.environ.get('DB_User')  or "Not Set") + "; DB_Password=" + (os.environ.get('DB_Password')  or "Not Set") + "; " + err_message, db_connect_result=db_connect_result, name=socket.gethostname(), color=color, name1=name1, S=S, F=F)
 
 @app.route("/debug")
 def debug():
