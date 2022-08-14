@@ -11,6 +11,9 @@ DB_Database = os.environ.get('DB_Database') or "mysql"
 DB_User = os.environ.get('DB_User') or "root"
 DB_Password = os.environ.get('DB_Password') or "paswrd"
 
+images = os.environ.get('https://final-rkrnarala.s3.amazonaws.com/success.jpg')
+name = os.environ.get('Raj Kiran Reddy Narala')
+
 @app.route("/")
 def main():
     db_connect_result = False
